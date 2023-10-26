@@ -9,6 +9,11 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    war  
+}
+
+tasks.war {
+    archiveFileName.set("winderleben.war")
 }
 
 repositories {
@@ -21,13 +26,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
 
     // This dependency is used by the application.
-    implementation("jakarta.ws.rs:jakarta.ws.rs-api:3.0.0")
+    implementation("jakarta.ws.rs:jakarta.ws.rs-api:3.1.0")
+    compileOnly("jakarta.platform:jakarta.jakartaee-api:10.0.0")
+    compileOnly("org.eclipse.persistence:eclipselink:4.0.2")
 
-}
-
-application {
-    // Define the main class for the application.
-    mainClass.set("de.wind_erleben.App")
 }
 
 tasks.named<Test>("test") {

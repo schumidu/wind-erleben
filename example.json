@@ -1,0 +1,185 @@
+{
+    "success": true,
+    "data": {
+        "timestamp": "2023-09-26 21:06:00",
+        "date": "26.09.2023",
+        "time": "21:06:00",
+        "values": {
+            "20": 1,
+            "21": 1886.8,
+            "26": 0,
+            "27": 108.2,
+            "28": 3.3,
+            "29": 78,
+            "30": 0.2,
+            "31": 101.2,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 1,
+            "37": 0,
+            "38": 0,
+            "39": 1885.8,
+            "40": 0,
+            "41": 1,
+            "42": -1885.8
+        },
+        "dataTypeInfos": {
+            "20": {
+                "name": "Photovoltaik",
+                "unit": "kW",
+                "decimals": 0,
+                "color": "rgb(255,192,0)",
+                "graphType": "stackedArea"
+            },
+            "21": {
+                "name": "Stromverbrauch",
+                "unit": "kW",
+                "decimals": 0,
+                "color": "rgb(63,63,63)",
+                "graphType": "line"
+            },
+            "26": {
+                "name": "Stadtwindanlage",
+                "unit": "kW",
+                "decimals": 0,
+                "color": "rgb(77,129,188)",
+                "graphType": "stackedArea"
+            },
+            "27": {
+                "name": "Windrichtung",
+                "unit": "\u00b0",
+                "decimals": 2,
+                "color": "",
+                "graphType": "line"
+            },
+            "28": {
+                "name": "Windgeschwindigkeit",
+                "unit": "m\/s",
+                "decimals": 2,
+                "color": "",
+                "graphType": "line"
+            },
+            "29": {
+                "name": "Pitch",
+                "unit": "\u00b0",
+                "decimals": 2,
+                "color": "",
+                "graphType": "line"
+            },
+            "30": {
+                "name": "Rotor Geschwindigkeit",
+                "unit": "rpm",
+                "decimals": 2,
+                "color": "",
+                "graphType": "line"
+            },
+            "31": {
+                "name": "Drehung der Gondel",
+                "unit": "\u00b0",
+                "decimals": 2,
+                "color": "",
+                "graphType": "line"
+            },
+            "32": {
+                "name": "Elektrische Leistung der E-Ladestation",
+                "unit": "W",
+                "decimals": 2,
+                "color": "",
+                "graphType": "line"
+            },
+            "33": {
+                "name": "Laden (negativ) bzw. Entladen (positiv) der Batterie mit bestimmter Leistung",
+                "unit": "W",
+                "decimals": 2,
+                "color": "",
+                "graphType": "line"
+            },
+            "34": {
+                "name": "Ladezustand",
+                "unit": "%",
+                "decimals": 2,
+                "color": "",
+                "graphType": "line"
+            },
+            "35": {
+                "name": "Batteriespannung",
+                "unit": "V",
+                "decimals": 2,
+                "color": "green",
+                "graphType": "stackedArea"
+            },
+            "36": {
+                "name": "Summe aller RLM Photovoltaik Einspeiser",
+                "unit": "kW",
+                "decimals": 2,
+                "color": "rgb(255,192,0)",
+                "graphType": "line"
+            },
+            "37": {
+                "name": "Summe aller SLP Photovoltaik Einspeiser",
+                "unit": "kW",
+                "decimals": 2,
+                "color": "rgb(255,192,0)",
+                "graphType": "line"
+            },
+            "38": {
+                "name": "Blockheizkraftwerk",
+                "unit": "kW",
+                "decimals": 2,
+                "color": "rgb(196,76,75)",
+                "graphType": "stackedArea"
+            },
+            "39": {
+                "name": "Strombezug von der MDN f\u00fcr Uffenheim",
+                "unit": "kW",
+                "decimals": 2,
+                "color": "rgb(127,127,127)",
+                "graphType": "line"
+            },
+            "40": {
+                "name": "Stromr\u00fcckspeisung an die MDN von Uffenheim",
+                "unit": "kW",
+                "decimals": 2,
+                "color": "rgb(127,127,127)",
+                "graphType": "line"
+            },
+            "41": {
+                "name": "Gesamterzeugung",
+                "unit": "kW",
+                "decimals": 2,
+                "color": "",
+                "graphType": "stackedArea"
+            },
+            "42": {
+                "name": "Bezug",
+                "unit": "kW",
+                "decimals": 0,
+                "color": "",
+                "graphType": "line"
+            }
+        },
+        "dataTypes": [
+            20,
+            21,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42
+        ]
+    }
+}
