@@ -27,6 +27,8 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("jakarta.ws.rs:jakarta.ws.rs-api:3.1.0")
+    implementation("org.apache.logging.log4j:log4j-core:2.21.1")
+    
     compileOnly("jakarta.platform:jakarta.jakartaee-api:10.0.0")
     compileOnly("org.eclipse.persistence:eclipselink:4.0.2")
 

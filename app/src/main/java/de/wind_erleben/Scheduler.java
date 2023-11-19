@@ -1,6 +1,11 @@
 package de.wind_erleben;
 
+import java.util.logging.Logger;
+
+import java.util.logging.Level;
+
 import de.wind_erleben.jsonstrukture.MainObject;
+import de.wind_erleben.mail.MailClient;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 import jakarta.ejb.Schedule;
@@ -14,16 +19,30 @@ import jakarta.inject.Inject;
 @Singleton
 public class Scheduler {
 
+    final private Logger logger = Logger.getLogger(Scheduler.class.getName());
+
     @Inject
     private DataScrapperProcessor dsp;
+
+    @Inject
+    private MailClient mailClient;
+
     @Schedule(hour = "*", minute = "*", second = "0,30")
-    public void programmaticTimeout(Timer timer){
+    public void programmaticTimeout(){
         try{
-            System.out.println("Neuer Programmdurchlauf");
             dsp.downloadAndStoreData();
         }catch(final Throwable e){
-            // e.printStackTrace(); //TODO ersetzen durch Log
-            System.out.println("Fehlerbehandlung");
+            logger.log(Level.WARNING, "Fehler im Scheduler", e);
+        }
+    }
+
+    @Schedule(hour = "12", minute = "0", second = "0")
+    public void dailyReport(){
+        try{
+            logger.log(Level.INFO, "Test");
+            mailClient.sendDailyStatusMail();
+        }catch(final Throwable e){
+            logger.log(Level.WARNING, "Fehler in täglicher Statusverarbeitung", e);
         }
     }
 }

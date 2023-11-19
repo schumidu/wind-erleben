@@ -22,6 +22,7 @@ public class DataValuesUff implements Serializable {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private LocalDateTime websiteTime;
+    private LocalDateTime insertionTime = LocalDateTime.now();
     private double photovoltaik;
     private double stromverbrauch;
     private double stadtwindanlage;
@@ -47,6 +48,9 @@ public class DataValuesUff implements Serializable {
     }
     public void setWebsiteTime(LocalDateTime websiteTime) {
         this.websiteTime = websiteTime;
+    }
+    public LocalDateTime getinsertionTime(){
+        return insertionTime;
     }
     public double getPhotovoltaik() {
         return photovoltaik;
