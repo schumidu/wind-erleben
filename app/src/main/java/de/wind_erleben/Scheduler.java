@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 
 import de.wind_erleben.jsonstrukture.MainObject;
-import de.wind_erleben.mail.MailClient;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 import jakarta.ejb.Schedule;
@@ -24,9 +23,6 @@ public class Scheduler {
     @Inject
     private DataScrapperProcessor dsp;
 
-    @Inject
-    private MailClient mailClient;
-
     @Schedule(hour = "*", minute = "*", second = "0,30")
     public void programmaticTimeout(){
         try{
@@ -40,7 +36,6 @@ public class Scheduler {
     public void dailyReport(){
         try{
             logger.log(Level.INFO, "Test");
-            mailClient.sendDailyStatusMail();
         }catch(final Throwable e){
             logger.log(Level.WARNING, "Fehler in täglicher Statusverarbeitung", e);
         }

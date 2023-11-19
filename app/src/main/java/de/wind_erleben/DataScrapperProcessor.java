@@ -3,8 +3,6 @@ package de.wind_erleben;
 import java.util.List;
 import java.util.logging.Logger;
 
-import de.wind_erleben.logging.DatabaseLogger;
-import de.wind_erleben.logging.WindDatabaseLog;
 import jakarta.ejb.Stateless;
 import jakarta.ejb.TransactionAttribute;
 import jakarta.ejb.TransactionAttributeType;
@@ -23,9 +21,6 @@ public class DataScrapperProcessor {
 
     @Inject
     private WindErlebenRestClient dataScrapper;
-
-    @Inject
-    private DatabaseLogger dl;
     
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public void downloadAndStoreData(){
@@ -34,7 +29,6 @@ public class DataScrapperProcessor {
             em.persist(dvu);
             logger.info("Datensatz erfolgreich geschrieben " + dvu.getWebsiteTime());
         }else{
-            dl.logDuplicateValue(dvu);
             logger.warning("Datensatz existiert bereits. Satzzeit: " + dvu.getWebsiteTime());
         }
     }
