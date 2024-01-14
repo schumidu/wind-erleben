@@ -1,6 +1,7 @@
 package de.wind_erleben;
 
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import jakarta.ejb.Stateless;

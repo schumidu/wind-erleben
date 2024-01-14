@@ -1,1 +1,0 @@
-kill -9 `cat ./payara6/glassfish/domains/domain1/config/pid`

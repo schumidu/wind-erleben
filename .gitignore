@@ -3,9 +3,15 @@
 
 # Ignore Gradle build output directory
 build
-bin
+/app/build/
+/app/libs/
+/app/bin/
+/bin
 
-payara*
+#config/
 
+/payara*/
+/config/resources/
+/config/payara/payaradockersecrets
 
 .vscode

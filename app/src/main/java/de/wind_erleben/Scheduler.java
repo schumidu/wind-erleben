@@ -26,18 +26,10 @@ public class Scheduler {
     @Schedule(hour = "*", minute = "*", second = "0,30")
     public void programmaticTimeout(){
         try{
+            // logger.warning("TESTEST");
             dsp.downloadAndStoreData();
         }catch(final Throwable e){
             logger.log(Level.WARNING, "Fehler im Scheduler", e);
-        }
-    }
-
-    @Schedule(hour = "12", minute = "0", second = "0")
-    public void dailyReport(){
-        try{
-            logger.log(Level.INFO, "Test");
-        }catch(final Throwable e){
-            logger.log(Level.WARNING, "Fehler in täglicher Statusverarbeitung", e);
         }
     }
 }

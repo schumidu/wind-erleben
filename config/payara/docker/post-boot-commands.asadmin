@@ -1,0 +1,1 @@
+create-password-alias passwordalias --passwordfile /run/secrets/payaramysqlsecret

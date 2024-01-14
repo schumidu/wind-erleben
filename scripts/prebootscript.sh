@@ -1,0 +1,1 @@
+$PAYARA_DIR/bin/asadmin --passwordfile /run/secrets/payaramysqlsecret create-password-alias passwordalias
