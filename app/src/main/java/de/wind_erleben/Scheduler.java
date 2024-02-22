@@ -1,17 +1,11 @@
 package de.wind_erleben;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import java.util.logging.Level;
-
-import de.wind_erleben.jsonstrukture.MainObject;
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.Resource;
 import jakarta.ejb.Schedule;
-import jakarta.ejb.Schedules;
 import jakarta.ejb.Singleton;
 import jakarta.ejb.Startup;
-import jakarta.ejb.Timer;
 import jakarta.inject.Inject;
 
 @Startup
@@ -24,11 +18,10 @@ public class Scheduler {
     private DataScrapperProcessor dsp;
 
     @Schedule(hour = "*", minute = "*", second = "0,30")
-    public void programmaticTimeout(){
-        try{
-            // logger.warning("TESTEST");
+    public void programmaticTimeout() {
+        try {
             dsp.downloadAndStoreData();
-        }catch(final Throwable e){
+        } catch (final Throwable e) {
             logger.log(Level.WARNING, "Fehler im Scheduler", e);
         }
     }

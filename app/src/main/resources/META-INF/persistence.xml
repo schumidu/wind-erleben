@@ -7,8 +7,8 @@
       <!-- <class>de.wind_erleben.DataValuesUff</class> -->
       <jta-data-source>jdbc/mysqlpool</jta-data-source>
       <properties>
-         <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
-         <!-- <property name="jakarta.persistence.schema-generation.database.action" value="create"/> -->
+         <!-- <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/> -->
+         <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
          <!-- <property name="jakarta.persistence.sql-load-script-source" value="META-INF/defaultdata.sql"/> -->
          <property name="eclipselink.logging.level" value="WARNING"/>
       </properties>

@@ -20,9 +20,15 @@ services:
       - ./pre-boot-commands.asadmin:/opt/payara/config/pre-boot-commands.asadmin
       - ./post-boot-commands.asadmin:/opt/payara/config/post-boot-commands.asadmin
       - ../../../app/build/libs/winderleben.war:/opt/payara/deployments/winderleben.war
+      - ./restClientConfig.properties:/opt/payara/config/client.properties
 
     environment:
       - PAYARA_ARGS=--debug
+      - DATABASE_HOST=mysqldbtest
+      - DATABASE_NAME=exampledb
+      - DATABASE_USER=exampleuser
+      - DATABASE_PORT=3306
+      - TZ=Europe/Berlin
       
     secrets:
       - payaramysqlsecret

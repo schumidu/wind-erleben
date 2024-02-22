@@ -24,6 +24,7 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
+    testImplementation("org.glassfish.jersey.test-framework:jeresy-test-framework-core:3.1.5")
 
     // This dependency is used by the application.
     implementation("jakarta.ws.rs:jakarta.ws.rs-api:3.1.0")

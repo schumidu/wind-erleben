@@ -12,9 +12,12 @@ public class WindErlebenRestClient {
     @Inject
     private DataFormatKonverter dataFormatKonverter;
 
+    @Inject
+    WindErlebenRestClientConfig cfg;
+
     public MainObject getFullData(){
         final Client client = ClientBuilder.newClient();
-        return client.target("https://www.wind-erleben.de/ajaxdata/data/all")
+        return client.target(cfg.getURLBase() + "/ajaxdata/data/all")
             .request()
             .get(MainObject.class);
     }
