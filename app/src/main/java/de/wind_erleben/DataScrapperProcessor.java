@@ -27,16 +27,14 @@ public class DataScrapperProcessor {
         final DataValuesUff dvu = dataScrapper.getData();
         if(!checkIfDataAlreadyStored(dvu)){
             em.persist(dvu);
-            logger.info("Datensatz erfolgreich geschrieben " + dvu.getWebsiteTime());
         }else{
-            logger.warning("Datensatz existiert bereits. Satzzeit: " + dvu.getWebsiteTime());
+            logger.info("Datensatz existiert bereits. Satzzeit: " + dvu.getWebsiteTime());
         }
     }
 
     private boolean checkIfDataAlreadyStored(final DataValuesUff dvu){
         final Query q = em.createNamedQuery("checkIfTimestampExists");
         q.setParameter("timestamp", dvu.getWebsiteTime());
-        List<DataValuesUff> resultList = q.getResultList();
-        return resultList.size() == 1;
+        return q.getResultList().size() == 1;
     }
 }

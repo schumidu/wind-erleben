@@ -4,7 +4,7 @@ services:
   payara:
     container_name: winderlebenpayara
     image: payara/server-full:6.2023.12-jdk17
-    restart: unless-stopped
+    restart: no
     ports:
       - 127.0.0.1:8080:8080
       - 127.0.0.1:8181:8181
@@ -14,13 +14,11 @@ services:
     volumes:
       # # logs
       # - ./serverlog:/opt/payara/appserver/glassfish/domains/domain1/logs
-      # preboot actions
-     # - ./prebootscript.sh:/opt/payara/scripts/init.d/01_script.sh
-      - ../../resources/mysql-connector-j-8.1.0.jar:/opt/payara/appserver/glassfish/lib/mysql-connector-j-8.1.0.jar
-      - ./pre-boot-commands.asadmin:/opt/payara/config/pre-boot-commands.asadmin
-      - ./post-boot-commands.asadmin:/opt/payara/config/post-boot-commands.asadmin
-      - ../../../app/build/libs/winderleben.war:/opt/payara/deployments/winderleben.war
-      - ./restClientConfig.properties:/opt/payara/config/client.properties
+      - ./config/resources/mysql-connector-j-8.1.0.jar:/opt/payara/appserver/glassfish/lib/mysql-connector-j-8.1.0.jar
+      - ./config/payara/docker/pre-boot-commands.asadmin:/opt/payara/config/pre-boot-commands.asadmin
+      - ./config/payara/docker/post-boot-commands.asadmin:/opt/payara/config/post-boot-commands.asadmin
+      - ./app/build/libs/winderleben.war:/opt/payara/deployments/winderleben.war
+      - ./config/payara/docker/restClientConfig.properties:/opt/payara/config/client.properties
 
     environment:
       - PAYARA_ARGS=--debug
@@ -35,7 +33,4 @@ services:
 
 secrets:
   payaramysqlsecret:
-    file: ../payaradockersecrets
-
-volumes:
-  payaralog:
+    file: ./config/payara/payaradockersecrets
