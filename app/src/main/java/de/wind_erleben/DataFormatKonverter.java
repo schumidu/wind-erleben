@@ -29,7 +29,7 @@ public class DataFormatKonverter {
         dvu.setBatteriespannung(values.get("35"));
         dvu.setRlmPhotovoltaik(values.get("36"));
         dvu.setSlpPhotovoltaik(values.get("37"));
-        dvu.setBlockheizkraftwer(values.get("38"));
+        dvu.setBlockheizkraftwerk(values.get("38"));
         dvu.setStrombezugMDNUffenheim(values.get("39"));
         dvu.setStromrueckspeisungMDNUffenheim(values.get("40"));
         dvu.setGesamterzeugung(values.get("41"));

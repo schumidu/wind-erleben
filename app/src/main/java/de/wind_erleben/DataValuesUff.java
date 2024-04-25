@@ -37,7 +37,7 @@ public class DataValuesUff implements Serializable {
     private double batteriespannung;
     private double rlmPhotovoltaik;
     private double slpPhotovoltaik;
-    private double blockheizkraftwer;
+    private double blockheizkraftwerk;
     private double strombezugMDNUffenheim;
     private double stromrueckspeisungMDNUffenheim;
     private double gesamterzeugung;
@@ -136,11 +136,11 @@ public class DataValuesUff implements Serializable {
     public void setSlpPhotovoltaik(double slpPhotovoltaik) {
         this.slpPhotovoltaik = slpPhotovoltaik;
     }
-    public double getBlockheizkraftwer() {
-        return blockheizkraftwer;
+    public double getBlockheizkraftwerk() {
+        return blockheizkraftwerk;
     }
-    public void setBlockheizkraftwer(double blockheizkraftwer) {
-        this.blockheizkraftwer = blockheizkraftwer;
+    public void setBlockheizkraftwerk(double blockheizkraftwerk) {
+        this.blockheizkraftwerk = blockheizkraftwerk;
     }
     public double getStrombezugMDNUffenheim() {
         return strombezugMDNUffenheim;

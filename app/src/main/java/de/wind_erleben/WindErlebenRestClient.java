@@ -1,5 +1,7 @@
 package de.wind_erleben;
 
+import java.util.concurrent.TimeUnit;
+
 import de.wind_erleben.jsonstrukture.MainObject;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -16,7 +18,11 @@ public class WindErlebenRestClient {
     WindErlebenRestClientConfig cfg;
 
     public MainObject getFullData(){
-        final Client client = ClientBuilder.newClient();
+        final Client client = ClientBuilder
+            .newBuilder()
+            .readTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .build();
         return client.target(cfg.getURLBase() + "/ajaxdata/data/all")
             .request()
             .get(MainObject.class);

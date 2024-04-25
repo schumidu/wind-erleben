@@ -29,6 +29,9 @@ dependencies {
     // This dependency is used by the application.
     implementation("jakarta.ws.rs:jakarta.ws.rs-api:3.1.0")
     implementation("org.apache.logging.log4j:log4j-core:2.21.1")
+    implementation("org.flywaydb:flyway-core:10.11.1")
+    implementation("org.flywaydb:flyway-mysql:10.11.1")
+    implementation("com.mysql:mysql-connector-j:8.1.0")
     // implementation("org.liquibase:liquibase-core:4.26.0")
     
     compileOnly("jakarta.platform:jakarta.jakartaee-api:10.0.0")
