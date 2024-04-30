@@ -4,14 +4,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import javax.sql.DataSource;
-
-import org.eclipse.persistence.logging.LogLevel;
 import org.flywaydb.core.Flyway;
 import org.flywaydb.core.api.output.MigrateResult;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.annotation.Resource;
 import jakarta.ejb.Singleton;
 import jakarta.ejb.Startup;
 

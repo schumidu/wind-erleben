@@ -15,4 +15,5 @@ build
 /config/payara/payaradockersecrets
 
 .vscode
+!.vscode/settigns.json
 .env
