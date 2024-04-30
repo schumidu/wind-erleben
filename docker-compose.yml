@@ -1,5 +1,3 @@
-version: '3.1'
-
 services:
   payara:
     container_name: winderlebenpayara
@@ -21,16 +19,10 @@ services:
       - ./config/payara/docker/restClientConfig.properties:/opt/payara/config/client.properties
 
     environment:
-      - PAYARA_ARGS=--debug
-      - DATABASE_HOST=mysqldbtest
-      - DATABASE_NAME=exampledb
-      - DATABASE_USER=exampleuser
-      - DATABASE_PORT=3306
       - TZ=Europe/Berlin
-      
-    secrets:
-      - payaramysqlsecret
-
-secrets:
-  payaramysqlsecret:
-    file: ./config/payara/payaradockersecrets
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - PAYARA_ARGS=${PAYARA_ARGS}
