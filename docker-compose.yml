@@ -19,7 +19,6 @@ services:
       - ./config/payara/docker/restClientConfig.properties:/opt/payara/config/client.properties
 
     environment:
-      - TZ=Europe/Berlin
       - DATABASE_HOST=${DATABASE_HOST}
       - DATABASE_NAME=${DATABASE_NAME}
       - DATABASE_USER=${DATABASE_USER}

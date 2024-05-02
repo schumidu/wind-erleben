@@ -12,3 +12,5 @@ COPY ./config/payara/docker/pre-boot-commands.asadmin ${PREBOOT_COMMANDS}
 COPY ./config/payara/docker/post-boot-commands.asadmin ${POSTBOOT_COMMANDS}
 COPY ./config/payara/docker/restClientConfig.properties ${CONFIG_DIR}/client.properties
 COPY --from=builder /usr/app/build/libs/winderleben.war ${DEPLOY_DIR}
+
+ENV TZ=Europe/Berlin
