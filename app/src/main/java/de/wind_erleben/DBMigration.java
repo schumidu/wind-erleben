@@ -34,7 +34,7 @@ public class DBMigration {
                 MigrateResult migrate = flyway.migrate();
                 logger.log(Level.WARNING, createLogMessage(migrate));
         }catch(Exception e){
-            logger.log(Level.SEVERE, e.getStackTrace().toString());
+            logger.log(Level.SEVERE, e.getMessage(), e);
         }
 
     }

@@ -16,4 +16,6 @@ build
 
 .vscode
 !.vscode/settigns.json
-.env
+*.env
+
+test_mysql_db.yml
