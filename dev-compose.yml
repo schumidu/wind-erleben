@@ -1,0 +1,40 @@
+services:
+  db: 
+    image: mysql:8.3
+    restart: always
+    container_name: mysqldbwinderleben
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_RANDOM_ROOT_PASSWORD: yes
+    volumes:
+      - db:/var/lib/mysql
+
+  payara:
+    container_name: winderlebenpayara
+    build:
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 127.0.0.1:8081:8080
+      - 127.0.0.1:8182:8181
+      - 127.0.0.1:4849:4848
+      - 127.0.0.1:9009:9009
+    
+    environment:
+      - TZ=Europe/Berlin
+      - DATABASE_HOST=mysqldbwinderleben
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - PAYARA_ARGS=${PAYARA_ARGS}
+    # volumes: 
+      # # logs
+      # - ./serverlog:/opt/payara/appserver/glassfish/domains/domain1/logs
+
+volumes:
+  db:
