@@ -14,7 +14,7 @@ services:
       - db:/var/lib/mysql
 
   payara:
-    container_name: winderlebenpayara
+    container_name: winderlebenpayara-dev
     build:
       dockerfile: ./Dockerfile
     restart: always
@@ -32,9 +32,8 @@ services:
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_PORT=${DATABASE_PORT}
       - PAYARA_ARGS=${PAYARA_ARGS}
-    # volumes: 
-      # # logs
-      # - ./serverlog:/opt/payara/appserver/glassfish/domains/domain1/logs
+    volumes: 
+      - ./serverlog:/opt/payara/appserver/glassfish/domains/domain1/logs
 
 volumes:
   db:

@@ -1,9 +1,9 @@
-FROM gradle:8.6.0-jdk17 as builder
+FROM gradle:8.8.0-jdk21 as builder
 WORKDIR /usr/app
 COPY ./app .
 RUN gradle war
 
-FROM payara/server-full:6.2023.12-jdk17
+FROM payara/server-full:6.2024.5-jdk21
 
 LABEL contactmail="schumann.lukas@gmx.de"
 COPY ./config/resources/mysql-connector-j-8.1.0.jar /opt/payara/appserver/glassfish/lib/mysql-connector-j-8.1.0.jar

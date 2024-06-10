@@ -9,7 +9,7 @@ build
 /bin
 
 #config/
-
+serverlog
 /payara*/
 /config/resources/
 /config/payara/payaradockersecrets
@@ -17,5 +17,3 @@ build
 .vscode
 !.vscode/settigns.json
 *.env
-
-test_mysql_db.yml

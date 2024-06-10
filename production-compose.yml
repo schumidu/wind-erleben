@@ -1,0 +1,13 @@
+services:
+  payara:
+    container_name: winderlebenpayara-prod
+    image: schumidu2000/winderlebenscrapper:1.0
+    restart: always
+    ports: 
+      - 127.0.0.1:4848:4848
+    environments:
+      - TZ=Europe/Berlin
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_PORT=${DATABASE_PORT}
