@@ -17,3 +17,4 @@ serverlog
 .vscode
 !.vscode/settigns.json
 *.env
+!dev.env

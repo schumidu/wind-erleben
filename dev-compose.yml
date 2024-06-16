@@ -12,6 +12,7 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: yes
     volumes:
       - db:/var/lib/mysql
+    env_file: "dev.env"
 
   payara:
     container_name: winderlebenpayara-dev
@@ -34,6 +35,7 @@ services:
       - PAYARA_ARGS=${PAYARA_ARGS}
     volumes: 
       - ./serverlog:/opt/payara/appserver/glassfish/domains/domain1/logs
+    env_file: "dev.env"
 
 volumes:
   db:
