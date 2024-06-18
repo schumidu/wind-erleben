@@ -5,10 +5,6 @@ services:
     restart: always
     ports: 
       - 127.0.0.1:4848:4848
-    environments:
+    environment:
       - TZ=Europe/Berlin
-      - DATABASE_NAME=${DATABASE_NAME}
-      - DATABASE_USER=${DATABASE_USER}
-      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
-      - DATABASE_PORT=${DATABASE_PORT}
     env_file: "prod.env"

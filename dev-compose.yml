@@ -24,15 +24,9 @@ services:
       - 127.0.0.1:8182:8181
       - 127.0.0.1:4849:4848
       - 127.0.0.1:9009:9009
-    
     environment:
       - TZ=Europe/Berlin
       - DATABASE_HOST=mysqldbwinderleben
-      - DATABASE_NAME=${DATABASE_NAME}
-      - DATABASE_USER=${DATABASE_USER}
-      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
-      - DATABASE_PORT=${DATABASE_PORT}
-      - PAYARA_ARGS=${PAYARA_ARGS}
     volumes: 
       - ./serverlog:/opt/payara/appserver/glassfish/domains/domain1/logs
     env_file: "dev.env"
